@@ -1,5 +1,8 @@
 .gradle
 build/
+run/
+zMinecraft/
+.gradle/
 
 # Ignore Gradle GUI config
 gradle-app.setting
