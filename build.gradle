@@ -10,9 +10,13 @@ buildscript {
             name = "sonatype"
             url = "https://oss.sonatype.org/content/repositories/snapshots/"
         }
+	maven {
+             url "https://plugins.gradle.org/m2/"
+       }
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
+	classpath "org.ajoberstar:grgit:2.1.0"
     }
 }
 
@@ -27,10 +31,10 @@ plugins {
   id "se.bjurr.gitchangelog.git-changelog-gradle-plugin" version "1.32"
 }
 
+apply plugin: "org.ajoberstar.grgit"
 apply from: 'https://raw.githubusercontent.com/BuiltBrokenModding/BuiltBrokenScripts/buildScripts/index/index.gradle'
 apply plugin: 'forge'
 apply plugin: 'com.github.kt3k.coveralls'
-
 
 println archivesBaseName
 
